@@ -1,3 +1,10 @@
+" Automaticall install Vim Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -11,12 +18,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'HerringtonDarkholme/yats.vim' "For Typescript Highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
-Plug 'tpope/vim-commentary'
 Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'APZelos/blamer.nvim'
@@ -33,7 +40,6 @@ let g:ctrlp_prompt_mappings = {
 
 let g:rainbow_active = 1
 let g:blamer_enabled = 1
-
 
 " Git Gutter Config
 set updatetime=100
@@ -55,3 +61,5 @@ vnoremap <silent> <Leader>f :Farf<cr>
 " shortcut for far.vim replace
 nnoremap <silent> <Leader>f :Farr<cr>
 vnoremap <silent> <Leader>f :Farr<cr>
+
+map <Leader>d :vert Gdiff<CR>
