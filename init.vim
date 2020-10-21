@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -68,10 +68,8 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>p :Leaderf file<CR>
+map <Leader>p :CtrlP<CR>
 
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
 let g:airline_powerline_fonts = 1
 
 " shortcut for far.vim find
