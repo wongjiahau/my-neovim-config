@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'HerringtonDarkholme/yats.vim' "For Typescript Highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -23,10 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow'
 Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'APZelos/blamer.nvim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 " Initialize plugin system
@@ -63,10 +60,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-
-let g:rainbow_active = 1
-let g:blamer_enabled = 1
-
 " Git Gutter Config
 set updatetime=100
 
@@ -86,8 +79,8 @@ nnoremap <silent> <Leader>f :Farf<cr>
 vnoremap <silent> <Leader>f :Farf<cr>
 
 " shortcut for far.vim replace
-nnoremap <silent> <Leader>f :Farr<cr>
-vnoremap <silent> <Leader>f :Farr<cr>
+nnoremap <silent> <Leader>h :Farr<cr>
+vnoremap <silent> <Leader>h :Farr<cr>
 
 map <Leader>d :vert Gdiff<CR>
 
