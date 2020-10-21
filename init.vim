@@ -27,6 +27,7 @@ Plug 'luochen1990/rainbow'
 Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'APZelos/blamer.nvim'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
@@ -63,3 +64,7 @@ nnoremap <silent> <Leader>f :Farr<cr>
 vnoremap <silent> <Leader>f :Farr<cr>
 
 map <Leader>d :vert Gdiff<CR>
+
+autocmd vimenter * colorscheme gruvbox
+set bg=light
+set autowrite
