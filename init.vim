@@ -28,6 +28,7 @@ Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'APZelos/blamer.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 " Initialize plugin system
 call plug#end()
@@ -50,10 +51,10 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>p :CtrlP<CR>
+map <Leader>p :Leaderf file<CR>
 
-" FAR config
-set ignorecase smartcase  " ignore case only when the pattern contains no capital letters
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
 
 " shortcut for far.vim find
 nnoremap <silent> <Leader>f :Farf<cr>
@@ -68,3 +69,4 @@ map <Leader>d :vert Gdiff<CR>
 autocmd vimenter * colorscheme gruvbox
 set bg=light
 set autowrite
+set smartcase
