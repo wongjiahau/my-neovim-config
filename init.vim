@@ -22,9 +22,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -72,13 +73,9 @@ map <Leader>p :CtrlP<CR>
 
 let g:airline_powerline_fonts = 1
 
-" shortcut for far.vim find
-nnoremap <silent> <Leader>f :Farf<cr>
-vnoremap <silent> <Leader>f :Farf<cr>
-
-" shortcut for far.vim replace
-nnoremap <silent> <Leader>h :Farr<cr>
-vnoremap <silent> <Leader>h :Farr<cr>
+" shortcut for Silver Search
+nnoremap <silent> <Leader>f :Ag<cr>
+vnoremap <silent> <Leader>f :Ag<cr>
 
 map <Leader>d :vert Gdiff<CR>
 

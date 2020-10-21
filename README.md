@@ -9,3 +9,6 @@ Then make sure `npm` install at local instead of root folder to prevent permissi
 ```
 npm config set prefix ~/npm
 ```
+
+2. Silver Searcher
+Refer https://github.com/ggreer/the_silver_searcher#installing
