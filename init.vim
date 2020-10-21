@@ -23,7 +23,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -69,7 +68,7 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>p :CtrlP<CR>
+map <Leader>p :Files<CR>
 
 let g:airline_powerline_fonts = 1
 
