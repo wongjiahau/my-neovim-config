@@ -27,7 +27,6 @@ Plug 'luochen1990/rainbow'
 Plug 'brooth/far.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'APZelos/blamer.nvim'
-Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 " Initialize plugin system
@@ -80,6 +79,7 @@ map <Leader>p :Leaderf file<CR>
 
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
+let g:airline_powerline_fonts = 1
 
 " shortcut for far.vim find
 nnoremap <silent> <Leader>f :Farf<cr>
@@ -91,7 +91,6 @@ vnoremap <silent> <Leader>f :Farr<cr>
 
 map <Leader>d :vert Gdiff<CR>
 
-autocmd vimenter * colorscheme gruvbox
-set bg=light
 set autowrite
 set smartcase
+set ignorecase
