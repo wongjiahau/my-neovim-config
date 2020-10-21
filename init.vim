@@ -87,3 +87,5 @@ map <Leader>d :vert Gdiff<CR>
 set autowrite
 set smartcase
 set ignorecase
+
+set shell=fish
