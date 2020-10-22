@@ -68,7 +68,8 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>p :Files<CR>
+map <Leader>p :GFiles<CR>
+map <Leader>g :GFiles?<CR>
 
 let g:airline_powerline_fonts = 1
 
