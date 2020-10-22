@@ -83,5 +83,7 @@ map <Leader>d :vert Gdiff<CR>
 set autowrite
 set smartcase
 set ignorecase
-
+set tabstop=2
+set shiftwidth=2
 set shell=fish
+set expandtab
