@@ -50,6 +50,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh :call <SID>show_documentation()<CR>
 nmap <silent> <Leader>, :CocAction<CR>
+nmap <Leader>r <Plug>(coc-rename)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
