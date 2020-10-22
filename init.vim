@@ -88,3 +88,15 @@ set tabstop=2
 set shiftwidth=2
 set shell=fish
 set expandtab
+
+
+""" For setting Autoread
+""" Refer https://stackoverflow.com/a/53860166/6587634
+if ! exists("g:CheckUpdateStarted")
+    let g:CheckUpdateStarted=1
+    call timer_start(1,'CheckUpdate')
+endif
+function! CheckUpdate(timer)
+    silent! checktime
+    call timer_start(500,'CheckUpdate')
+endfunction
