@@ -68,7 +68,7 @@ set number
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeFind<CR>
 map <Leader>p :GFiles<CR>
 map <Leader>g :Git<CR>
 
