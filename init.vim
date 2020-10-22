@@ -25,6 +25,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
