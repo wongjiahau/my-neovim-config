@@ -92,3 +92,6 @@ set expandtab
 autocmd VimEnter * ColorHighlight
 autocmd vimenter * colorscheme gruvbox
 set background=light
+set foldmethod=syntax
+set foldlevelstart=1
+let javaScript_fold=1
