@@ -63,6 +63,11 @@ function! s:show_documentation()
   endif
 endfunction
 
+try
+    nmap <Leader>e :call CocAction('diagnosticNext')<cr>
+    nmap <Leader>E :call CocAction('diagnosticPrevious')<cr>
+endtry
+
 " Git Gutter Config
 set updatetime=100
 
