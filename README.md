@@ -9,6 +9,12 @@ Then make sure `npm` install at local instead of root folder to prevent permissi
 ```
 npm config set prefix ~/npm
 ```
+Then install COC extensions:
+Run in Nvim:
+```
+:CocInstall coc-tsserver
+:CocInstall coc-explorer
+```
 
 2. Silver Searcher
 Refer https://github.com/ggreer/the_silver_searcher#installing

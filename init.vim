@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " On-demand loading
-Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'HerringtonDarkholme/yats.vim' "For Typescript Highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -69,7 +68,7 @@ set number
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-map <Leader>n :NERDTreeFind<CR>
+nmap <Leader>n :CocCommand explorer<CR>
 map <Leader>p :GFiles<CR>
 map <Leader>g :Git<CR>
 
