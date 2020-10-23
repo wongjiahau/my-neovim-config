@@ -25,6 +25,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'chrisbra/Colorizer'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
@@ -87,3 +89,6 @@ set tabstop=2
 set shiftwidth=2
 set shell=fish
 set expandtab
+autocmd VimEnter * ColorHighlight
+autocmd vimenter * colorscheme gruvbox
+set background=light
