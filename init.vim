@@ -100,7 +100,11 @@ set cursorline
 set foldlevelstart=1
 set nofoldenable
 let javaScript_fold=1
+set hlsearch
+set incsearch
 set confirm
+set ttimeoutlen=0
 
 let g:airline_extensions = ['branch','term', 'tabline']
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#show_splits = 0
