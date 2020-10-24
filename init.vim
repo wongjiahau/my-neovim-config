@@ -79,8 +79,6 @@ nmap <Leader>n :CocCommand explorer<CR>
 map <Leader>p :GFiles<CR>
 map <Leader>g :Git<CR>
 
-let g:airline_powerline_fonts = 1
-
 " shortcut for Silver Search
 nnoremap <silent> <Leader>f :Ag<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
@@ -98,5 +96,11 @@ autocmd VimEnter * ColorHighlight
 autocmd vimenter * colorscheme gruvbox
 set background=light
 set foldmethod=syntax
+set cursorline
 set foldlevelstart=1
+set nofoldenable
 let javaScript_fold=1
+set confirm
+
+let g:airline_extensions = ['branch','term', 'tabline']
+let g:airline_powerline_fonts = 1
