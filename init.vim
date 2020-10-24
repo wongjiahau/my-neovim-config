@@ -102,7 +102,6 @@ set nofoldenable
 let javaScript_fold=1
 set hlsearch
 set incsearch
-set confirm
 set ttimeoutlen=0
 
 let g:airline_extensions = ['branch','term', 'tabline']
