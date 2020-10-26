@@ -26,9 +26,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 Plug 'morhetz/gruvbox'
+Plug 'terryma/vim-smooth-scroll'
 
 " Initialize plugin system
 call plug#end()
+
+" Smooth scroll config
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
 
 " COC Config
 " Use <c-space> to trigger completion.
