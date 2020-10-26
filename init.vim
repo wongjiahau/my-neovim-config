@@ -107,6 +107,7 @@ let javaScript_fold=1
 set hlsearch
 set incsearch
 set ttimeoutlen=10
+set mouse=a
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
