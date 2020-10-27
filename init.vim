@@ -27,6 +27,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'josa42/vim-lightline-coc'
 
 " Initialize plugin system
 call plug#end()
@@ -112,9 +113,15 @@ set mouse=a
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified', 
+      \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
+      \   'right': [ [ 'gitbranch'  ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" register compoments:
+call lightline#coc#register()
+
