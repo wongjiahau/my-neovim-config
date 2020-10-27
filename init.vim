@@ -25,8 +25,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
-Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Initialize plugin system
 call plug#end()
@@ -97,7 +97,7 @@ set shiftwidth=2
 set shell=fish
 set expandtab
 autocmd VimEnter * ColorHighlight
-autocmd vimenter * colorscheme gruvbox
+colorscheme PaperColor
 set background=light
 set foldmethod=syntax
 set cursorline
@@ -110,7 +110,6 @@ set ttimeoutlen=10
 set mouse=a
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
