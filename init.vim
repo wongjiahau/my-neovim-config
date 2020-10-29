@@ -19,7 +19,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -27,16 +26,21 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'josa42/vim-lightline-coc'
+Plug 'vim-airline/vim-airline'
+" Plug 'itchyny/lightline.vim'
+" Plug 'josa42/vim-lightline-coc'
 
 " Initialize plugin system
 call plug#end()
 
-" Smooth scroll config
+
+" SMOOTH_SCROLL_CONFIG
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+" END SMOOTH_SCROLL_CONFIG
 
-" COC Config
+
+" COC_CONFIG
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -72,24 +76,39 @@ try
     nmap <Leader>e :call CocAction('diagnosticNext')<cr>
     nmap <Leader>E :call CocAction('diagnosticPrevious')<cr>
 endtry
+" END COC_CONFIG
 
-" Git Gutter Config
+
+" GIT_GUTTER_CONFIG
 set updatetime=100
+" END GIT_GUTTER_CONFIG
 
-set number
+
+" LEADER_MAPPING_CONFIG
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
+" Open file tree explorer
 nmap <Leader>n :CocCommand explorer<CR>
+
+" Open file search
 map <Leader>p :GFiles<CR>
+
+" Open Git status dashboard
 map <Leader>g :Git<CR>
+
+" For opening Git diff of current file vertically
+map <Leader>d :vert Gdiff<CR>
 
 " shortcut for Silver Search
 nnoremap <silent> <Leader>f :Ag<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
 
-map <Leader>d :vert Gdiff<CR>
+" END LEADER_MAPPING_CONFIG
 
+
+" VIM_SETTINGS
+set number
 set autowrite
 set smartcase
 set ignorecase
@@ -109,19 +128,37 @@ set hlsearch
 set incsearch
 set ttimeoutlen=10
 set mouse=a
+" END VIM_SETTINGS
 
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 
-      \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
-      \   'right': [ [ 'gitbranch'  ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
 
-" register compoments:
-call lightline#coc#register()
+" LIGHTLINE_CONFIG
+" let g:lightline = {
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'readonly', 'filename', 'modified', 
+"       \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
+"       \   'right': [ [ 'gitbranch'  ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'FugitiveHead'
+"       \ },
+"       \ }
 
+" " register compoments:
+" call lightline#coc#register()
+" END LIGHTLINE_CONFIG
+
+
+" AIRLINE_CONFIG
+let g:airline_extensions = ['branch','term', 'tabline']
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#close_symbol = '×'
+let g:airline#extensions#tabline#show_close_button = 0
+" END AIRLINE_CONFIG
