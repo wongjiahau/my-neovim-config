@@ -14,8 +14,14 @@
     - ~/.vim/undo-history
 
 - shell:
+  - [apt-get update, "Update package repository"]
+  - [which curl || apt-get install curl, "Install curl if not exists"]
+  - [which node || curl -sL install-node.now.sh/lts | bash, "Install node if not exists"]
+  - [npm config set prefix ~/npm, "Setting npm modules install location to prevent permission issues"]
   - [sh -c 'curl -flo "${xdg_data_home:-$home/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Installing Vim Plug]
-  - [apt-get install silversearcher-ag, Installing Silver Searcher]
-  - [npm config set prefix ~/npm, Setting npm modules install location, to prevent permission issues]
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', "Install Vim Plug"]
+  - [apt-get install silversearcher-ag, "Installing Silver Searcher"]
+  - [curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage, "Install Neovim"]
+  - [./nvim.appimage --appimage-extract],  "Extract Neovim"]
+  - [ln -s /squashfs-root/AppRun /usr/bin/nvim, "Link Neovim to /usr/bin"]
 
