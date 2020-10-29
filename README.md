@@ -2,7 +2,7 @@
 ```
 apt-get update
 apt-get install -y python-yaml
-which git || apt-get install -y git
+apt-get install -y git
 git clone https://github.com/wongjiahau/my-neovim-config.git
 cd my-neovim-config
 ./install
