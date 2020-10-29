@@ -41,6 +41,9 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
 
 
 " COC_CONFIG
+" Default extensions
+let g:coc_global_extensions = ['coc-json', 'coc-explorer', 'coc-tsserver']
+
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
