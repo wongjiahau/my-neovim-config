@@ -1,13 +1,10 @@
-# Install the following dependencies
-```
-apt-get update
-apt-get install python-yaml
-apt-get install git
-```
-
 # How to install?
 ```
+apt-get update
+apt-get install -y python-yaml
+which git || apt-get install -y git
 git clone https://github.com/wongjiahau/my-neovim-config.git
 cd my-neovim-config
 ./install
+nvim
 ```
