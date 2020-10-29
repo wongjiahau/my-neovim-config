@@ -4,14 +4,14 @@
 
 - clean: ['~']
 
+- create:
+    - ~/.config/nvim
+    - ~/.vim/undo-history
+
 - link:
     ~/.vimrc: init.vim
     ~/.config/nvim/init.vim: init.vim
     ~/.config/nvim/coc-settings.json: coc-settings.json
-
-- create:
-    - ~/.config/nvim
-    - ~/.vim/undo-history
 
 - shell:
   - [apt-get update, "Update package repository"]
