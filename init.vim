@@ -165,4 +165,5 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#close_symbol = '×'
 let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#term#enabled = 0
 " END AIRLINE_CONFIG
