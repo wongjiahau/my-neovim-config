@@ -132,6 +132,7 @@ set incsearch
 set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
+nmap <CR> :wa<CR> :sleep 1<CR> :e<CR>
 " END VIM_SETTINGS
 
 
