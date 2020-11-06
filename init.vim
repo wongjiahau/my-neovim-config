@@ -132,6 +132,7 @@ set incsearch
 set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
+set inccommand=nosplit " For viewing live substitution
 nmap <CR> :wa<CR> :sleep 800m<CR> :e<CR>
 " END VIM_SETTINGS
 
