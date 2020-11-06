@@ -26,9 +26,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'vim-airline/vim-airline'
-" Plug 'itchyny/lightline.vim'
-" Plug 'josa42/vim-lightline-coc'
+" Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+Plug 'josa42/vim-lightline-coc'
 
 " Initialize plugin system
 call plug#end()
@@ -132,25 +132,25 @@ set incsearch
 set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
-nmap <CR> :wa<CR> :sleep 1<CR> :e<CR>
+nmap <CR> :wa<CR> :sleep 800m<CR> :e<CR>
 " END VIM_SETTINGS
 
 
 " LIGHTLINE_CONFIG
-" let g:lightline = {
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'readonly', 'filename', 'modified', 
-"       \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
-"       \   'right': [ [ 'gitbranch'  ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'FugitiveHead'
-"       \ },
-"       \ }
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 
+      \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
+      \   'right': [ [ 'gitbranch'  ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
-" " register compoments:
-" call lightline#coc#register()
+" register compoments:
+call lightline#coc#register()
 " END LIGHTLINE_CONFIG
 
 
