@@ -91,19 +91,22 @@ set updatetime=100
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-" Open file tree explorer
+" Open file tree explorer (N-erdTree)
 nmap <Leader>n :CocCommand explorer<CR>
 
-" Open file search
+" Open COC Diagnostics (H-elp)
+nmap <Leader>h :CocDiagnostics<CR>
+
+" Open file search (Ctrl P)
 map <Leader>p :GFiles<CR>
 
-" Open Git status dashboard
+" Open Git status dashboard (G-it)
 map <Leader>g :Git<CR>
 
-" For opening Git diff of current file vertically
+" For opening Git diff of current file vertically (d-iff)
 map <Leader>d :vert Gdiff<CR>
 
-" shortcut for Silver Search
+" shortcut for Silver Search (f-ind)
 nnoremap <silent> <Leader>f :Ag<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
 
@@ -133,7 +136,6 @@ set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
 set inccommand=nosplit " For viewing live substitution
-nmap <CR> :wa<CR> :sleep 800m<CR> :e<CR>
 " END VIM_SETTINGS
 
 
