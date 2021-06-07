@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'airblade/vim-gitgutter'
-Plug 'HerringtonDarkholme/yats.vim' "For Typescript Highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -28,6 +27,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Initialize plugin system
 call plug#end()
@@ -84,19 +84,22 @@ set updatetime=100
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-" Open file tree explorer
+" Open file tree explorer (N-erdTree)
 nmap <Leader>n :CocCommand explorer<CR>
 
-" Open file search
+" Open COC Diagnostics (H-elp)
+nmap <Leader>h :CocDiagnostics<CR>
+
+" Open file search (Ctrl P)
 map <Leader>p :GFiles<CR>
 
-" Open Git status dashboard
+" Open Git status dashboard (G-it)
 map <Leader>g :Git<CR>
 
-" For opening Git diff of current file vertically
+" For opening Git diff of current file vertically (d-iff)
 map <Leader>d :vert Gdiff<CR>
 
-" shortcut for Silver Search
+" shortcut for Silver Search (f-ind)
 nnoremap <silent> <Leader>f :Ag<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
 
@@ -115,7 +118,6 @@ set expandtab
 autocmd VimEnter * ColorHighlight
 colorscheme PaperColor
 set background=light
-set foldmethod=syntax
 set cursorline
 set cursorcolumn
 set foldlevelstart=1
@@ -128,8 +130,22 @@ set mouse=a
 set clipboard+=unnamedplus
 set inccommand=nosplit " For viewing live substitution
 nmap <CR> :wa<CR>
+
 " END VIM_SETTINGS
 
+" TREE_SITTER_CONFIG
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { },  -- list of language that will be disabled
+  },
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+" END TREE_SITTER_CONFIG
 
 " LIGHTLINE_CONFIG
 let g:lightline = {
