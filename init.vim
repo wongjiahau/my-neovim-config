@@ -24,7 +24,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
-Plug 'terryma/vim-smooth-scroll'
 Plug 'NLKNguyen/papercolor-theme'
 " Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
@@ -32,12 +31,6 @@ Plug 'josa42/vim-lightline-coc'
 
 " Initialize plugin system
 call plug#end()
-
-
-" SMOOTH_SCROLL_CONFIG
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
-" END SMOOTH_SCROLL_CONFIG
 
 
 " COC_CONFIG
@@ -111,7 +104,7 @@ vnoremap <silent> <Leader>f :Ag<cr>
 
 
 " VIM_SETTINGS
-set number
+set relativenumber
 set autowrite
 set smartcase
 set ignorecase
@@ -124,6 +117,7 @@ colorscheme PaperColor
 set background=light
 set foldmethod=syntax
 set cursorline
+set cursorcolumn
 set foldlevelstart=1
 set nofoldenable
 let javaScript_fold=1
@@ -133,7 +127,7 @@ set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
 set inccommand=nosplit " For viewing live substitution
-nmap <CR> :wa<CR> :sleep 800m<CR> :e<CR>
+nmap <CR> :wa<CR>
 " END VIM_SETTINGS
 
 
