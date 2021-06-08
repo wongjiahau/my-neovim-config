@@ -32,6 +32,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Initialize plugin system
 call plug#end()
@@ -133,6 +134,7 @@ set ttimeoutlen=10
 set mouse=a
 set clipboard+=unnamedplus
 set inccommand=nosplit " For viewing live substitution
+set guifont=Fira_Code:h28 "Refer https://github.com/glacambre/firenvim/issues/972#issuecomment-797805351
 nmap <CR> :wa<CR>
 
 nmap <C-j> :cnext<CR>
@@ -141,15 +143,15 @@ nmap <C-k> :cprev<CR>
 " END VIM_SETTINGS
 
 " TREE_SITTER_CONFIG
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"  highlight = {
-"    enable = true,              -- false will disable the whole extension
-"    disable = { },  -- list of language that will be disabled
-"  },
-"}
-"EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { },  -- list of language that will be disabled
+  },
+}
+EOF
 
 
 set foldmethod=expr
