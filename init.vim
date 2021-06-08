@@ -27,7 +27,11 @@ Plug 'NLKNguyen/papercolor-theme'
 " Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
+Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -91,7 +95,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :GFiles<CR>
+map <Leader>p :Telescope git_files<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :Git<CR>
@@ -131,18 +135,23 @@ set clipboard+=unnamedplus
 set inccommand=nosplit " For viewing live substitution
 nmap <CR> :wa<CR>
 
+nmap <C-j> :cnext<CR>
+nmap <C-k> :cprev<CR>
+
 " END VIM_SETTINGS
 
 " TREE_SITTER_CONFIG
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { },  -- list of language that will be disabled
-  },
-}
-EOF
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"  highlight = {
+"    enable = true,              -- false will disable the whole extension
+"    disable = { },  -- list of language that will be disabled
+"  },
+"}
+"EOF
+
+
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 " END TREE_SITTER_CONFIG
