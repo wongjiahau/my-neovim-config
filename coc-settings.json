@@ -1,5 +1,13 @@
 {
   "diagnostic.errorSign": "▶",
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "graphql",
+    "json",
+    "javascriptreact",
+    "typescriptreact"
+  ]
 }
