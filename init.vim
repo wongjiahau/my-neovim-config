@@ -39,7 +39,7 @@ call plug#end()
 
 " COC_CONFIG
 " Default extensions
-let g:coc_global_extensions = ['coc-json', 'coc-explorer', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-json', 'coc-explorer', 'coc-tsserver', 'coc-prettier']
 
 " Use <c-space> to trigger completion.
 if has('nvim')
