@@ -29,9 +29,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Initialize plugin system
@@ -41,6 +41,7 @@ call plug#end()
 " COC_CONFIG
 " Default extensions
 let g:coc_global_extensions = ['coc-json', 'coc-explorer', 'coc-tsserver', 'coc-prettier']
+let g:coc_enable_locationlist = 0
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -86,8 +87,8 @@ set updatetime=100
 
 
 " LEADER_MAPPING_CONFIG
-let mapleader=" "
-nnoremap <SPACE> <Nop>
+let mapleader="\\"
+" nnoremap <SPACE> <Nop>
 
 " Open file tree explorer (N-erdTree)
 nmap <Leader>n :CocCommand explorer<CR>
@@ -96,7 +97,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :Telescope git_files<CR>
+map <Leader>p :GFiles<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :Git<CR>
@@ -108,11 +109,13 @@ map <Leader>d :vert Gdiff<CR>
 nnoremap <silent> <Leader>f :Ag<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
 
+" shortcut for putting search result into quickfix
+let $FZF_DEFAULT_OPTS = '--bind ctrl-q:select-all+accept'
 " END LEADER_MAPPING_CONFIG
 
 
 " VIM_SETTINGS
-set relativenumber
+set number relativenumber
 set autowrite
 set smartcase
 set ignorecase
@@ -120,6 +123,7 @@ set tabstop=2
 set shiftwidth=2
 set shell=fish
 set expandtab
+set nowrap
 autocmd VimEnter * ColorHighlight
 colorscheme PaperColor
 set background=light
@@ -190,3 +194,7 @@ let g:airline#extensions#tabline#close_symbol = '×'
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#term#enabled = 0
 " END AIRLINE_CONFIG
+
+" Make sure all types of *.graphql files get syntax highlighting.
+" This is necessary for coc-prettier to work
+autocmd BufNewFile,BufRead *.graphql set ft=graphql

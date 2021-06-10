@@ -5,9 +5,10 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
-    "graphql",
     "json",
     "javascriptreact",
-    "typescriptreact"
-  ]
+    "typescriptreact",
+    "graphql"
+  ],
+  "coc.preferences.useQuickfixForLocations": true
 }
