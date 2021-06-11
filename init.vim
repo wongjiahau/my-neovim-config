@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " On-demand loading
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
