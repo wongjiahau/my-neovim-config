@@ -23,16 +23,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/Colorizer'
-Plug 'NLKNguyen/papercolor-theme'
-" Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'folke/tokyonight.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -124,14 +120,12 @@ set shiftwidth=2
 set shell=fish
 set expandtab
 set nowrap
+set noswapfile
 autocmd VimEnter * ColorHighlight
-colorscheme PaperColor
+colorscheme tokyonight
 set background=light
 set cursorline
 set cursorcolumn
-set foldlevelstart=1
-set nofoldenable
-let javaScript_fold=1
 set hlsearch
 set incsearch
 set ttimeoutlen=10
@@ -157,9 +151,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 " END TREE_SITTER_CONFIG
 
 " LIGHTLINE_CONFIG
@@ -179,22 +170,8 @@ let g:lightline = {
 call lightline#coc#register()
 " END LIGHTLINE_CONFIG
 
-
-" AIRLINE_CONFIG
-let g:airline_extensions = ['branch','term', 'tabline']
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#close_symbol = '×'
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#term#enabled = 0
-" END AIRLINE_CONFIG
-
 " Make sure all types of *.graphql files get syntax highlighting.
 " This is necessary for coc-prettier to work
 autocmd BufNewFile,BufRead *.graphql set ft=graphql
+
+
