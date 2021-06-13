@@ -30,10 +30,10 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'andweeb/presence.nvim'
 
 " Initialize plugin system
 call plug#end()
-
 
 " COC_CONFIG
 " Default extensions
