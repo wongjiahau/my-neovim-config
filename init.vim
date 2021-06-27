@@ -31,6 +31,7 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'andweeb/presence.nvim'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 " Initialize plugin system
 call plug#end()
@@ -77,6 +78,13 @@ try
 endtry
 " END COC_CONFIG
 
+" CLAP_CONFIG
+autocmd ColorScheme * hi ClapSearchText guifg=black
+autocmd ColorScheme * hi ClapCurrentSelection guifg=black guibg=lightblue
+autocmd ColorScheme * hi ClapInput guibg=white
+autocmd ColorScheme * hi ClapSpinner guibg=lightgreen guifg=black
+autocmd ColorScheme * hi ClapDisplay guibg=white
+" END CLAP_CONFIG
 
 " GIT_GUTTER_CONFIG
 set updatetime=100
@@ -94,7 +102,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :GFiles<CR>
+map <Leader>p :Clap git_files<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :Git<CR>
@@ -103,7 +111,7 @@ map <Leader>g :Git<CR>
 map <Leader>d :vert Gdiff<CR>
 
 " shortcut for Silver Search (f-ind)
-nnoremap <silent> <Leader>f :Ag<cr>
+nnoremap <silent> <Leader>f :Clap grep<cr>
 vnoremap <silent> <Leader>f :Ag<cr>
 
 " shortcut for putting search result into quickfix
