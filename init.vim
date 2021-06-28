@@ -84,6 +84,7 @@ autocmd ColorScheme * hi ClapCurrentSelection guifg=black guibg=lightblue
 autocmd ColorScheme * hi ClapInput guibg=white
 autocmd ColorScheme * hi ClapSpinner guibg=lightgreen guifg=black
 autocmd ColorScheme * hi ClapDisplay guibg=white
+let g:clap_open_preview = 'never'
 " END CLAP_CONFIG
 
 " GIT_GUTTER_CONFIG
