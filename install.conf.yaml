@@ -12,6 +12,7 @@
     ~/.vimrc: init.vim
     ~/.config/nvim/init.vim: init.vim
     ~/.config/nvim/coc-settings.json: coc-settings.json
+    ~/.config/kitty/kitty.conf: kitty.conf
 
 - shell:
   - [apt-get update, "Update package repository"]
