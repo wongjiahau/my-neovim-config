@@ -26,7 +26,6 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'andweeb/presence.nvim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 " Initialize plugin system
