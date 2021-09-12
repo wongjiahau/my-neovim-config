@@ -1,7 +1,7 @@
 " Automaticall install Vim Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -129,6 +129,7 @@ set nowrap
 set noswapfile
 " autocmd VimEnter * ColorHighlight
 colorscheme tokyonight
+let g:tokyonight_transparent = 1
 " let g:vscode_style = "light"
 " colorscheme vscode
 set background=light
