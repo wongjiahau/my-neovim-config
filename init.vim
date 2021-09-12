@@ -99,7 +99,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :Clap files --hidden<CR>
+map <Leader>p :Clap files<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :tab Git<CR>
