@@ -27,6 +27,7 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+" Plug 'Moqiful/vscode.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -98,10 +99,10 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :Clap files<CR>
+map <Leader>p :Clap files --hidden<CR>
 
 " Open Git status dashboard (G-it)
-map <Leader>g :Git<CR>
+map <Leader>g :tab Git<CR>
 
 " For opening Git diff of current file vertically (d-iff)
 map <Leader>d :vert Gdiff<CR>
@@ -126,8 +127,10 @@ set shell=fish
 set expandtab
 set nowrap
 set noswapfile
-autocmd VimEnter * ColorHighlight
+" autocmd VimEnter * ColorHighlight
 colorscheme tokyonight
+" let g:vscode_style = "light"
+" colorscheme vscode
 set background=light
 set cursorline
 set cursorcolumn
