@@ -27,10 +27,20 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'windwp/nvim-spectre'
 " Plug 'Moqiful/vscode.nvim'
 
 " Initialize plugin system
 call plug#end()
+
+" NVIM_SPECTRE_CONFIG
+nnoremap <leader>s :lua require('spectre').open()<CR>
+
+"search current highlighted word
+vnoremap <leader>s :lua require('spectre').open_visual()<CR>
+
+" END NVIM_SPECTRE_CONFIG
 
 " COC_CONFIG
 " Default extensions
