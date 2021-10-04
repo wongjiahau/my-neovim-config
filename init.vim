@@ -111,7 +111,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :Telescope find_files<CR>
+map <Leader>p :Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :tab Git<CR>
