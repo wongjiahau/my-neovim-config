@@ -12,5 +12,6 @@
   ],
   "coc.preferences.useQuickfixForLocations": true,
   "explorer.icon.enableNerdfont": true,
-  "tsserver.maxTsServerMemory": 2000
+  "tsserver.maxTsServerMemory": 2000,
+  "explorer.file.showHiddenFiles": true
 }
