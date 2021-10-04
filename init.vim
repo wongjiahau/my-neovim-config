@@ -176,8 +176,8 @@ EOF
 " LIGHTLINE_CONFIG
 let g:lightline = {
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 
+      \   'left': [ [ 'paste' ],
+      \             [ 'readonly', 'relativepath', 'modified', 
       \               'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' ] ],
       \   'right': [ [ 'gitbranch'  ] ]
       \ },
