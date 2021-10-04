@@ -21,7 +21,9 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
@@ -109,7 +111,7 @@ nmap <Leader>n :CocCommand explorer<CR>
 nmap <Leader>h :CocDiagnostics<CR>
 
 " Open file search (Ctrl P)
-map <Leader>p :Clap files<CR>
+map <Leader>p :Telescope find_files<CR>
 
 " Open Git status dashboard (G-it)
 map <Leader>g :tab Git<CR>
@@ -117,9 +119,8 @@ map <Leader>g :tab Git<CR>
 " For opening Git diff of current file vertically (d-iff)
 map <Leader>d :vert Gdiff<CR>
 
-" shortcut for Silver Search (f-ind)
-nnoremap <silent> <Leader>f :Clap grep<cr>
-vnoremap <silent> <Leader>f :Ag<cr>
+" shortcut for file Search (f-ind)
+nnoremap <silent> <Leader>f :Telescope live_grep<cr>
 
 " shortcut for putting search result into quickfix
 let $FZF_DEFAULT_OPTS = '--bind ctrl-q:select-all+accept'
@@ -192,5 +193,3 @@ call lightline#coc#register()
 " Make sure all types of *.graphql files get syntax highlighting.
 " This is necessary for coc-prettier to work
 autocmd BufNewFile,BufRead *.graphql set ft=graphql
-
-
