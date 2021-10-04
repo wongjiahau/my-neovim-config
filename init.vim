@@ -21,7 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'folke/tokyonight.nvim'
