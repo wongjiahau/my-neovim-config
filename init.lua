@@ -22,8 +22,42 @@ end
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
   use {'neoclide/coc.nvim', branch = 'release'}
+  use 'chrisbra/Colorizer'
+  use 'itchyny/lightline.vim'
+  use 'josa42/vim-lightline-coc'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
+  use 'folke/tokyonight.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'windwp/nvim-spectre'
+  use 'nvim-telescope/telescope.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'sindrets/diffview.nvim'  
+  use { 
+    'TimUntersberger/neogit', 
+    requires = 'nvim-lua/plenary.nvim',
+  }
+  use {
+    "nanozuki/tabby.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  -- Tree sitter settings
+  require('nvim-treesitter.configs').setup({
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    highlight = {
+      enable = true,              -- false will disable the whole extension
+      disable = { },  -- list of language that will be disabled
+    },
+  })
+
+  -- COC settings
   g.coc_global_extensions = {'coc-json', 'coc-explorer', 'coc-tsserver', 'coc-prettier'}
   -- Open file tree explorer (N-erdTree)
   nnoremap('<Leader>n', ':CocCommand explorer<CR>')
@@ -59,12 +93,7 @@ return require('packer').startup(function()
     inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
   ]]
 
-
-
-  use 'chrisbra/Colorizer'
-
-  use 'itchyny/lightline.vim'
-  use 'josa42/vim-lightline-coc'
+  -- lightline settings
   g.lightline = {
     active = {
       left = {
@@ -79,37 +108,7 @@ return require('packer').startup(function()
   }
   vim.cmd('call lightline#coc#register()')
 
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-fugitive'
-  -- Open [g]it dashboard 
-  nnoremap('<Leader>g', ':tab Git<CR>')
-  -- For opening Git [d]iff of current file vertically 
-  nnoremap('<Leader>d', ':vert Gdiff<CR>')
-
-  use 'tpope/vim-surround'
-  use 'folke/tokyonight.nvim'
-  vim.cmd('colorscheme tokyonight')
-  g.tokyonight_transparent = 1
-
-  use 'nvim-lua/plenary.nvim'
-
-  use 'windwp/nvim-spectre'
-  -- [s]earch and replace
-  nnoremap('<leader>s', ':lua require("spectre").open() <CR>')
-  -- [s]earch current highlighted word
-  vnoremap('<leader>s', ':lua require("spectre").open_visual() <CR>')
-
-  use 'nvim-telescope/telescope.nvim'
-  -- Open file search
-  nnoremap('<Leader>p', ':Telescope git_files<CR>')
-  -- Open [b]uffer search
-  nnoremap('<Leader>b', ':Telescope buffers<CR>')
-  -- Global [f]ind
-  nnoremap('<Leader>f', ':Telescope live_grep<cr>')
-
-  use 'kyazdani42/nvim-web-devicons'
-  use 'sindrets/diffview.nvim'
-
+  -- diffview settings
   require('diffview').setup({
     file_panel = {
       tree_options = {
@@ -117,41 +116,38 @@ return require('packer').startup(function()
       }
     }
   })
-  -- Open current file [h]istory
-  nnoremap('<Leader>h', ':DiffviewFileHistory<CR>')
 
-  use { 
-    'TimUntersberger/neogit', 
-    requires = 'nvim-lua/plenary.nvim',
-  }
+  -- neogit settings
   require('neogit').setup({
     integrations = {
       diffview = true
     }
   })
 
-  use {
-    "nanozuki/tabby.nvim",
-    requires = "kyazdani42/nvim-web-devicons"
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
 
-  require('nvim-treesitter.configs').setup({
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    highlight = {
-      enable = true,              -- false will disable the whole extension
-      disable = { },  -- list of language that will be disabled
-    },
-  })
-
-
-  -- generic mappings
+  -- key mappings
   nnoremap('<CR>', ':wa<CR>')
   nnoremap('<C-j>', ':cnext<CR>')
   nnoremap('<C-k>', ':cprev<CR>')
+  -- Open [g]it dashboard 
+  nnoremap('<Leader>g', ':tab Git<CR>')
+  -- For opening Git [d]iff of current file vertically 
+  nnoremap('<Leader>d', ':vert Gdiff<CR>')
+  -- [s]earch and replace
+  nnoremap('<leader>s', ':lua require("spectre").open() <CR>')
+  -- [s]earch current highlighted word
+  vnoremap('<leader>s', ':lua require("spectre").open_visual() <CR>')
+  -- Open file search
+  nnoremap('<Leader>p', ':Telescope git_files<CR>')
+  -- Open [b]uffer search
+  nnoremap('<Leader>b', ':Telescope buffers<CR>')
+  -- Global [f]ind
+  nnoremap('<Leader>f', ':Telescope live_grep<cr>')
+  -- Open current file [h]istory
+  nnoremap('<Leader>h', ':DiffviewFileHistory<CR>')
+
+
+
 
   -- vim settings
   o.clipboard = o.clipboard .. 'unnamedplus'
@@ -174,6 +170,9 @@ return require('packer').startup(function()
   o.ttimeoutlen = 10
   o.mouse = 'a'
   o.inccommand = 'nosplit' -- For viewing live substitution
+  vim.cmd('colorscheme tokyonight')
+  g.tokyonight_transparent = 1
+
 
 end)
 
