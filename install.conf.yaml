@@ -23,5 +23,4 @@
   - [curl -LO https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage, "Install Neovim"]
   - [chmod u+x ./nvim.appimage && ./nvim.appimage --appimage-extract,  "Extract Neovim"]
   - [mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/nvim, "Link Neovim to /usr/bin"]
-  - [nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync', "Setup Neovim"]
 
