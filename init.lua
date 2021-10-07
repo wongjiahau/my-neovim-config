@@ -132,7 +132,7 @@ o.incsearch = true
 o.ttimeoutlen = 10
 o.mouse = 'a'
 o.inccommand = 'nosplit' -- For viewing live substitution
-vim.cmd('colorscheme tokyonight')
 g.tokyonight_transparent = 1
+vim.cmd('colorscheme tokyonight')
 
 
