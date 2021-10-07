@@ -1,6 +1,5 @@
 # Assumption
 - Operating system: Ubuntu
-- `npm` and `node` are installed
 
 # How to install?
 ```

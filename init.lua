@@ -73,7 +73,10 @@ vim.cmd('call lightline#coc#register()')
 
 -- diffview settings
 require('diffview').setup({
+  enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
   file_panel = {
+    position = 'top',
+    height = 6,
     tree_options = {
       flatten_dirs = false
     }
@@ -82,18 +85,18 @@ require('diffview').setup({
 
 -- neogit settings
 require('neogit').setup({
+  disable_commit_confirmation = true,
   integrations = {
     diffview = true
   }
 })
-
 
 -- key mappings
 nnoremap('<CR>', ':wa<CR>')
 nnoremap('<C-j>', ':cnext<CR>')
 nnoremap('<C-k>', ':cprev<CR>')
 -- Open [g]it dashboard 
-nnoremap('<Leader>g', ':tab Git<CR>')
+nnoremap('<Leader>g', ':Neogit<CR>')
 -- For opening Git [d]iff of current file vertically 
 nnoremap('<Leader>d', ':vert Gdiff<CR>')
 -- [s]earch and replace
