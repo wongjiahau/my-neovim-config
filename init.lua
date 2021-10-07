@@ -125,7 +125,6 @@ o.shell = 'fish'
 o.expandtab = true
 o.wrap = false
 o.swapfile = false
-o.background = 'light'
 o.cursorline = true
 o.cursorcolumn = true
 o.hlsearch = true
