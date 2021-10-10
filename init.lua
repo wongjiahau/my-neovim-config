@@ -109,8 +109,12 @@ nnoremap('<Leader>d', ':vert Gdiff<CR>')
 nnoremap('<leader>s', ':lua require("spectre").open() <CR>')
 -- [s]earch current highlighted word
 vnoremap('<leader>s', ':lua require("spectre").open_visual() <CR>')
--- Open file search
+-- Open file search (follows VSCode Cmd+p)
 nnoremap('<Leader>p', ':Telescope git_files<CR>')
+-- Open command pallete (follows VSCode Cmd+shift+p)
+nnoremap('<Leader>P', ':Telescope commands<CR>')
+-- Open registers search
+nnoremap('<Leader>"', ':Telescope registers<CR>')
 -- Open [b]uffer search
 nnoremap('<Leader>b', ':Telescope buffers<CR>')
 -- Global [f]ind
