@@ -142,6 +142,7 @@ o.ttimeoutlen = 10
 o.mouse = 'a'
 o.inccommand = 'nosplit' -- For viewing live substitution
 g.tokyonight_transparent = 1
+o.hidden = true -- to ensure terminal remains alive
 vim.cmd('colorscheme tokyonight')
 
 
