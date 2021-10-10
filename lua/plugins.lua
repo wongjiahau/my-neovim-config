@@ -1,35 +1,32 @@
 -- Bootstrap packer, refer https://github.com/wbthomason/packer.nvim#bootstrapping
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd 'packadd packer.nvim'
-end
+vim.cmd [[
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+]]
 
-
-return require('packer').startup(function()
+local Plug = vim.fn['plug#']
+vim.call('plug#begin', '~/.config/nvim/plugged')
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use {'neoclide/coc.nvim', branch = 'release'}
-  use 'itchyny/lightline.vim'
-  use 'josa42/vim-lightline-coc'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-surround'
-  use 'folke/tokyonight.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'windwp/nvim-spectre'
-  use 'nvim-telescope/telescope.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'sindrets/diffview.nvim'  
-  use { 
-    'TimUntersberger/neogit', 
-    requires = 'nvim-lua/plenary.nvim',
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use 'windwp/nvim-ts-autotag'
-  use 'windwp/nvim-autopairs'
-end)
+  Plug 'wbthomason/packer.nvim'
+  Plug ('neoclide/coc.nvim', {branch = 'release'})
+  Plug 'itchyny/lightline.vim'
+  Plug 'josa42/vim-lightline-coc'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'windwp/nvim-spectre'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'sindrets/diffview.nvim'  
+  Plug 'TimUntersberger/neogit'
+  Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+  Plug 'windwp/nvim-ts-autotag'
+  Plug 'windwp/nvim-autopairs'
+
+vim.call('plug#end')
+
