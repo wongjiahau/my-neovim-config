@@ -11,7 +11,6 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {'neoclide/coc.nvim', branch = 'release'}
-  use 'chrisbra/Colorizer'
   use 'itchyny/lightline.vim'
   use 'josa42/vim-lightline-coc'
   use 'tpope/vim-commentary'
@@ -26,10 +25,6 @@ return require('packer').startup(function()
   use { 
     'TimUntersberger/neogit', 
     requires = 'nvim-lua/plenary.nvim',
-  }
-  use {
-    "nanozuki/tabby.nvim",
-    requires = "kyazdani42/nvim-web-devicons"
   }
   use {
     'nvim-treesitter/nvim-treesitter',
