@@ -9,16 +9,12 @@
     - ~/.vim/undo-history
 
 - link:
-    ~/.vimrc: init.vim
-    ~/.config/nvim/init.lua: init.lua
-    ~/.config/nvim/coc-settings.json: coc-settings.json
     ~/.config/kitty/kitty.conf: kitty.conf
 
 - shell:
   - [apt-get update, "Update package repository"]
   - [which node || curl -sL install-node.now.sh/lts | bash -s -- --yes, "Install node if not exists"]
   - [npm config set prefix ~/npm, "Setting npm modules install location to prevent permission issues"]
-  - ["sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'", "Install Vim Plug"]
   - [apt-get install -y ripgrep, "Installing Ripgrep"]
   - [curl -LO https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage, "Install Neovim"]
   - [chmod u+x ./nvim.appimage && ./nvim.appimage --appimage-extract,  "Extract Neovim"]
