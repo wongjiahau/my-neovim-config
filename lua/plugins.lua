@@ -15,7 +15,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'folke/tokyonight.nvim'
+  Plug 'projekt0n/github-nvim-theme'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'windwp/nvim-spectre'
   Plug 'nvim-telescope/telescope.nvim'
