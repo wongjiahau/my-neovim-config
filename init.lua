@@ -3,10 +3,10 @@ local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
 local g = vim.g
-function nnoremap(key, cmd)
+local function nnoremap(key, cmd)
   vim.api.nvim_set_keymap('n', key, cmd, { noremap = true })
 end
-function vnoremap(key, cmd)
+local function vnoremap(key, cmd)
   vim.api.nvim_set_keymap('v', key, cmd, { noremap = true })
 end
 
@@ -62,20 +62,20 @@ vim.cmd [[
   inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 ]]
 
--- lightline settings
-g.lightline = {
-  active = {
-    left = {
-      { 'paste' },
-      { 'readonly', 'relativepath', 'modified', 
-      'coc_errors', 'coc_warnings', 'coc_ok', 'coc_status' } },
-      right = { { 'gitbranch'  } }
-    },
-  component_function = {
-    gitbranch = 'FugitiveHead'
+-- lualine settings
+require('lualine').setup({ 
+  options = {
+    theme = 'tokyonight'
   },
-}
-vim.cmd('call lightline#coc#register()')
+  sections = {
+    lualine_a = {{'filename', path = 1}},
+    lualine_b = {'g:coc_status'},
+    lualine_c = {{'diagnostics', sources = {'coc'}}},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'branch'}
+  },
+})
 
 -- diffview settings
 require('diffview').setup({

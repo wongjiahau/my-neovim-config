@@ -12,8 +12,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   -- Packer can manage itself
   Plug 'wbthomason/packer.nvim'
   Plug ('neoclide/coc.nvim', {branch = 'release'})
-  Plug 'itchyny/lightline.vim'
-  Plug 'josa42/vim-lightline-coc'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
@@ -27,6 +25,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
   Plug 'windwp/nvim-ts-autotag'
   Plug 'windwp/nvim-autopairs'
+  Plug 'hoob3rt/lualine.nvim'
 
 vim.call('plug#end')
 
