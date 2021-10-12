@@ -10,6 +10,5 @@ mkdir -p ~/.config/nvim
 git clone https://github.com/wongjiahau/my-neovim-config.git ~/.config/nvim
 cd ~/.config/nvim
 ./install
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 nvim
 ```
