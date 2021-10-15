@@ -26,6 +26,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'windwp/nvim-ts-autotag'
   Plug 'windwp/nvim-autopairs'
   Plug 'hoob3rt/lualine.nvim'
-
+  Plug 'alvarosevilla95/luatab.nvim'
 vim.call('plug#end')
 
