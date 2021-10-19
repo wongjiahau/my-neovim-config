@@ -156,4 +156,8 @@ require('github-theme').setup({
   hide_inactive_statusline = false
 })
 
-
+-- tabline colors
+vim.cmd [[
+hi TabLine guibg=#A89984
+hi TabLineFill guibg=#3C3836
+]]
