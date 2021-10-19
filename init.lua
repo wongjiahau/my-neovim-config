@@ -102,6 +102,8 @@ nnoremap('<C-j>', ':cnext<CR>')
 nnoremap('<C-k>', ':cprev<CR>')
 -- Open [g]it dashboard 
 nnoremap('<Leader>g', ':Neogit<CR>')
+-- Open [G]it diffs 
+nnoremap('<Leader>G', ':DiffviewOpen<CR>')
 -- For opening Git [d]iff of current file vertically 
 nnoremap('<Leader>d', ':vert Gdiff<CR>')
 -- [s]earch and replace
