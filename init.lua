@@ -64,9 +64,6 @@ vim.cmd [[
 
 -- lualine settings
 require('lualine').setup({ 
-  options = {
-    theme = 'github'
-  },
   sections = {
     lualine_a = {{'filename', path = 1}},
     lualine_b = {'g:coc_status'},
@@ -79,7 +76,6 @@ require('lualine').setup({
 
 -- diffview settings
 require('diffview').setup({
-  enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
   file_panel = {
     position = 'top',
     height = 6,
