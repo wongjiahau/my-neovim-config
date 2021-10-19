@@ -149,6 +149,7 @@ o.ttimeoutlen = 10
 o.mouse = 'a'
 o.inccommand = 'nosplit' -- For viewing live substitution
 o.hidden = true -- to ensure terminal remains alive
+o.background = 'light'
 
 
 require('github-theme').setup({
@@ -156,6 +157,5 @@ require('github-theme').setup({
   transparent = true,
   hide_inactive_statusline = false
 })
-vim.cmd('colorscheme github_light_default')
 
 
