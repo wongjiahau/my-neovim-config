@@ -161,3 +161,9 @@ vim.cmd [[
 hi TabLine guibg=#A89984
 hi TabLineFill guibg=#3C3836
 ]]
+
+-- floating windows color
+vim.cmd [[
+hi NormalFloat guibg=#fbf1c7
+hi Visual guibg=yellow
+]]
