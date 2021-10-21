@@ -167,3 +167,11 @@ vim.cmd [[
 hi NormalFloat guibg=#fbf1c7
 hi Visual guibg=yellow
 ]]
+
+-- COC colors
+vim.cmd [[
+hi CocErrorLine guibg=pink
+hi CocErrorVirtualText guibg=pink guifg=darkred
+hi CocInfoLine guibg=#fab005
+hi CocInfoVirtualText guibg=#fab005 guifg=darkred
+]]
