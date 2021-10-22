@@ -147,14 +147,10 @@ o.ttimeoutlen = 10
 o.mouse = 'a'
 o.inccommand = 'nosplit' -- For viewing live substitution
 o.hidden = true -- to ensure terminal remains alive
-o.background = 'light'
 
-
-require('github-theme').setup({
-  theme_style = 'light_default',
-  transparent = true,
-  hide_inactive_statusline = false
-})
+-- colorscheme
+vim.g.vscode_style = "light"
+vim.cmd [[colorscheme vscode]]
 
 -- tabline colors
 vim.cmd [[
