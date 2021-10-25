@@ -85,6 +85,13 @@ require('diffview').setup({
   }
 })
 
+-- telescope settings
+require('telescope').setup({
+  defaults = {
+    preview = false
+  }
+})
+
 -- neogit settings
 require('neogit').setup({
   disable_commit_confirmation = true,
