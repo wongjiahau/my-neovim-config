@@ -29,5 +29,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'alvarosevilla95/luatab.nvim'
   Plug 'Mofiqul/vscode.nvim'
   Plug ('iamcco/markdown-preview.nvim', { ['do'] = 'cd app && npm install' })
+  Plug 'lewis6991/gitsigns.nvim'
 vim.call('plug#end')
 

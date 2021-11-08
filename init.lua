@@ -100,6 +100,9 @@ require('neogit').setup({
   }
 })
 
+-- https://github.com/lewis6991/gitsigns.nvim
+require('gitsigns').setup({})
+
 -- https://github.com/alvarosevilla95/luatab.nvim
 require('luatab').setup({})  
 
