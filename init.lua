@@ -101,7 +101,7 @@ require('neogit').setup({
 })
 
 -- https://github.com/alvarosevilla95/luatab.nvim
-vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+require('luatab').setup({})  
 
 -- key mappings
 nnoremap('<CR>', ':wa<CR>')
