@@ -100,18 +100,18 @@ require('neogit').setup({
   }
 })
 
--- https://github.com/lewis6991/gitsigns.nvim
-require('gitsigns').setup({})
-
 -- https://github.com/alvarosevilla95/luatab.nvim
 require('luatab').setup({})  
+
+-- https://github.com/phaazon/hop.nvim
+require('hop').setup({ keys = 'etovxqpdygfblzhckisuran', term_seq_bias = 0.5 })
 
 -- key mappings
 nnoremap('<CR>', ':wa<CR>')
 nnoremap('<C-j>', ':cnext<CR>')
 nnoremap('<C-k>', ':cprev<CR>')
 -- Open [g]it dashboard 
-nnoremap('<Leader>g', ':Neogit<CR>')
+nnoremap('<Leader>g', ':tab Git<CR>')
 -- Open [G]it diffs 
 nnoremap('<Leader>G', ':DiffviewOpen<CR>')
 -- For opening Git [d]iff of current file vertically 
@@ -132,6 +132,8 @@ nnoremap('<Leader>b', ':Telescope buffers<CR>')
 nnoremap('<Leader>f', ':Telescope live_grep<cr>')
 -- Open current file [h]istory
 nnoremap('<Leader>h', ':DiffviewFileHistory<CR>')
+-- Toggle hop.nvim
+nnoremap('<Leader>t', ':HopWord<CR>')
 
 
 
