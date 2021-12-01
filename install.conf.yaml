@@ -16,7 +16,7 @@
   - [which node || curl -sL install-node.now.sh/lts | bash -s -- --yes, "Install node if not exists"]
   - [npm config set prefix ~/npm, "Setting npm modules install location to prevent permission issues"]
   - [apt-get install -y ripgrep, "Installing Ripgrep"]
-  - [curl -LO https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage, "Install Neovim"]
+  - [curl -LO https://github.com/neovim/neovim/releases/download/v0.6.0/nvim.appimage, "Install Neovim"]
   - [chmod u+x ./nvim.appimage && ./nvim.appimage --appimage-extract,  "Extract Neovim"]
   - [mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/nvim, "Link Neovim to /usr/bin"]
 
