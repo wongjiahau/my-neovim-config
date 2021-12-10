@@ -10,6 +10,9 @@ local function vnoremap(key, cmd)
   vim.api.nvim_set_keymap('v', key, cmd, { noremap = true })
 end
 
+-- Set leader
+g.mapleader = " "
+
 
 -- Tree sitter settings
 require('nvim-treesitter.configs').setup({
