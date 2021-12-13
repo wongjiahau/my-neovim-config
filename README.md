@@ -1,3 +1,6 @@
+# **WARNING: DEPRECATED**
+These config were migrated to https://github.com/wongjiahau/.config
+
 # Assumption
 - Operating system: Ubuntu
 
